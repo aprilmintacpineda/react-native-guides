@@ -90,13 +90,29 @@ On the top left, click where it says `multi_build > ` then a drop down will appe
 
 Do this same process for the `Staging` environment as well.
 
+<img src="https://github.com/aprilmintacpineda/react-native-multiple-build-environments-example/blob/master/resources/images/Add%20schema%201.png">
+
+<img src="https://github.com/aprilmintacpineda/react-native-multiple-build-environments-example/blob/master/resources/images/add%20schema%202.png">
+
+<img src="https://github.com/aprilmintacpineda/react-native-multiple-build-environments-example/blob/master/resources/images/add%20schema%203.png">
+
 ### Using different bundle id for each environment
 
 Having different bundle id will allow us to install all the apps on the same device, to do that, on the `targets`, select the `multi_build` and go to `build settings` and click on the plus button and click on `Add User-Defined Setting` and name that `BUNDLE_ID_SUFFIX` and just change the name for each build configurations accordingly then on `info.plist`, change the `Bundle identifier` to `$(PRODUCT_BUNDLE_IDENTIFIER).$(BUNDLE_ID_SUFFIX)`
 
+<img src="https://github.com/aprilmintacpineda/react-native-multiple-build-environments-example/blob/master/resources/images/bundle%20id%20suffix%201.png">
+
+<img src="https://github.com/aprilmintacpineda/react-native-multiple-build-environments-example/blob/master/resources/images/bundle%20id%20suffix%202.png">
+
+<img src="https://github.com/aprilmintacpineda/react-native-multiple-build-environments-example/blob/master/resources/images/bundle%20id%20suffix%203.png">
+
 ### Displaying different display name for each environment
 
 Go to `Build Settings` again on the `Targets > multi_build` and search for `PRODUCT NAME`, and then just change it accordingly for each environment. Then on `info.plist` change the `Bundle display name` to `$(PRODUCT_NAME)`
+
+<img src="https://github.com/aprilmintacpineda/react-native-multiple-build-environments-example/blob/master/resources/images/product%20name%201.png">
+
+<img src="https://github.com/aprilmintacpineda/react-native-multiple-build-environments-example/blob/master/resources/images/product%20name%202.png">
 
 ### Running the App
 
