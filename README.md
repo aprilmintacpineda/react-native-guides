@@ -62,6 +62,10 @@ To run the app, you need to do `npm run android -- --variant=$(flavor)$(buildTyp
 
 When developing locally, we'll need to run `npm run android -- --variant=localDebug`
 
+###### Known issues
+
+- [Error: Activity class {com.myapp/com.myapp.MainActivity} does not exist.](https://github.com/facebook/react-native/issues/30092)
+
 ### Building AAB
 
 To bundle the `AAB` files to be uploaded to the playstore, you can still run `./gradlew bundleRelease` which will bundle release for each of the flavors we have defined and you'll see the outputs on `android/app/build/outputs/bundle`. However, you might only want to bundle one flavor, you can run `./gradlew bundleProductionRelease` which will only bundle `production`.
