@@ -18,7 +18,7 @@ npx react-native init multi_build --directory multi-build
 
 go to `android/app/build.gradle`, below `buildTypes` block, add the following:
 
-```
+```groovy
 flavorDimensions "version"
 productFlavors {
     local {
@@ -71,6 +71,8 @@ To bundle the `AAB` files to be uploaded to the playstore, you can still run `./
 ## iOS
 
 ### Adding configurations for each environment
+
+<img src="https://github.com/aprilmintacpineda/react-native-multiple-build-environments-example/blob/master/resources/images/add%20new%20configuration.png>
 
 Open your `ios/multi_build.xcworkspace` and add configuration, click on the project on the left side, then on the project on the right side, and then on info tab, by default there are only `Debug` and `Release` there.
 
