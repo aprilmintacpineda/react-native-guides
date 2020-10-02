@@ -72,8 +72,6 @@ To bundle the `AAB` files to be uploaded to the playstore, you can still run `./
 
 ### Adding configurations for each environment
 
-<img src="https://github.com/aprilmintacpineda/react-native-multiple-build-environments-example/blob/master/resources/images/add%20new%20configuration.png">
-
 Open your `ios/multi_build.xcworkspace` and add configuration, click on the project on the left side, then on the project on the right side, and then on info tab, by default there are only `Debug` and `Release` there.
 
 Create a debug configuration for `Local` environment by clicking on the `plus icon` on the configuration panel, and then click on `Duplicate "Debug" configuration` and name that configuration as `LocalDebug`.
@@ -83,6 +81,8 @@ Create a release configuration for `Local` environment by clicking on the `plus 
 Do the same thing for `Staging` environment.
 
 **NOTE:** For production, you don't have to since it will use the `Debug` and `Release` by default.
+
+<img src="https://github.com/aprilmintacpineda/react-native-multiple-build-environments-example/blob/master/resources/images/add%20new%20configuration.png">
 
 ### Adding schema for each environment
 
