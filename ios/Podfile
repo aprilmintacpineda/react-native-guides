@@ -1,0 +1,39 @@
+require_relative '../node_modules/react-native/scripts/react_native_pods'
+require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
+
+platform :ios, '12.0'
+
+project 'multi_build',
+        'Local.Debug' => :debug,
+        'Local.Release' => :release,
+        'Staging.Debug' => :debug,
+        'Staging.Release' => :release
+
+target 'multi_build' do
+  config = use_native_modules!
+
+  use_react_native!(:path => config["reactNativePath"])
+
+  target 'multi_buildTests' do
+    inherit! :complete
+    # Pods for testing
+  end
+
+  # Enables Flipper.
+  #
+  # Note that if you have use_frameworks! enabled, Flipper will not work and
+  # you should disable these next few lines.
+  use_flipper!
+  post_install do |installer|
+    flipper_post_install(installer)
+  end
+end
+
+target 'multi_build-tvOS' do
+  # Pods for multi_build-tvOS
+
+  target 'multi_build-tvOSTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+end
