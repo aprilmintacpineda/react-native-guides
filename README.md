@@ -2,6 +2,10 @@
 
 Problem build an app that runs on multiple environment (local, staging, production, etc.) and install all of them on the same device.
 
+<img src="https://github.com/aprilmintacpineda/react-native-multiple-build-environments-example/blob/master/resources/images/Android.png">
+
+<img src="https://github.com/aprilmintacpineda/react-native-multiple-build-environments-example/blob/master/resources/images/ios.png">
+
 ## Initialize react-native
 
 ```
