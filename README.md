@@ -88,6 +88,26 @@ Do the same thing for `Staging` environment.
 
 <img src="https://github.com/aprilmintacpineda/react-native-multiple-build-environments-example/blob/master/resources/images/add%20new%20configuration.png">
 
+In your `ios/Podfile`, add the following code:
+
+```ruby
+# ...
+platform :ios, '12.0'
+
+# start here <----
+project 'multi_build',
+        'LocalDebug' => :debug,
+        'LocalRelease' => :release,
+        'StagingDebug' => :debug,
+        'StagingRelease' => :release
+# end here
+
+target 'multi_build' do
+# ...
+```
+
+Then run `cd ios && pod install && cd ..`.
+
 ### Adding schema for each environment
 
 On the top left, click where it says `multi_build > ` then a drop down will appear, click on `edit schema` then a dialog will appear. By default the `multi_build` is selected, this is the default schema and the one we will use for production. On the bottom there's a `Duplicate Schema` button, click on that and name the new schema as `local`, this is what we will use for the local environment. Then go through each of the tabs on the left side and then checkout the `Build Configuration`, where it says `Debug` replace it withh `LocalDebug` and where it says `Release` change it to `LocalRelease`, and at the bottom make sure to check the checkbox on `Shared`.
@@ -100,23 +120,41 @@ Do this same process for the `Staging` environment as well.
 
 <img src="https://github.com/aprilmintacpineda/react-native-multiple-build-environments-example/blob/master/resources/images/add%20schema%203.png">
 
-### Using different bundle id for each environment
+### Using different Bundle ID, display name, product name, and info plist for each environment
 
-Having different bundle id will allow us to install all the apps on the same device, to do that, on the `targets`, select the `multi_build` and go to `build settings` and click on the plus button and click on `Add User-Defined Setting` and name that `BUNDLE_ID_SUFFIX` and just change the name for each build configurations accordingly then on `info.plist`, change the `Bundle identifier` to `$(PRODUCT_BUNDLE_IDENTIFIER).$(BUNDLE_ID_SUFFIX)`
+Having different names and bundle id for each environment will allow us to install all environments in one device and differentiate them.
 
-<img src="https://github.com/aprilmintacpineda/react-native-multiple-build-environments-example/blob/master/resources/images/bundle%20id%20suffix%201.png">
+#### To use different display name for each environment
 
-<img src="https://github.com/aprilmintacpineda/react-native-multiple-build-environments-example/blob/master/resources/images/bundle%20id%20suffix%202.png">
+On `info.plist` change the `Bundle display name` to `$(PRODUCT_NAME)`
 
-<img src="https://github.com/aprilmintacpineda/react-native-multiple-build-environments-example/blob/master/resources/images/bundle%20id%20suffix%203.png">
+<img src="https://github.com/aprilmintacpineda/react-native-multiple-build-environments-example/blob/master/resources/images/display%20name.png">
 
-### Displaying different display name for each environment
+#### To use different info plist for each environment (optional)
 
-Go to `Build Settings` again on the `Targets > multi_build` and search for `PRODUCT NAME`, and then just change it accordingly for each environment. Then on `info.plist` change the `Bundle display name` to `$(PRODUCT_NAME)`
+Now copy the `info.plist` twice and then rename one copy to `info_local.plist` and other `info_staging.plist`.
 
-<img src="https://github.com/aprilmintacpineda/react-native-multiple-build-environments-example/blob/master/resources/images/product%20name%201.png">
+<img src="https://github.com/aprilmintacpineda/react-native-multiple-build-environments-example/blob/master/resources/images/add%20info%20plist%201.png">
 
-<img src="https://github.com/aprilmintacpineda/react-native-multiple-build-environments-example/blob/master/resources/images/product%20name%202.png">
+<img src="https://github.com/aprilmintacpineda/react-native-multiple-build-environments-example/blob/master/resources/images/add%20info%20plist%202.png">
+
+Since you'll be using the `info.plist` for production builds, you can remove the `App Transport Security Settings` entry on it.
+
+<img src="https://github.com/aprilmintacpineda/react-native-multiple-build-environments-example/blob/master/resources/images/add%20info%20plist%204.png">
+
+Then add the newly created `info_local.plist` and `info_staging.plist` to the project.
+
+###### Note: the add file dialog might be too small, you can expand it to view more.
+
+By the end, you should have the following:
+
+<img src="https://github.com/aprilmintacpineda/react-native-multiple-build-environments-example/blob/master/resources/images/add%20info%20plist%203.png">
+
+#### To use different bundle id, product name, and info plist for each environment
+
+On the `targets`, select the `multi_build` and go to `build settings` and click on the plus button and click on `Add User-Defined Setting` and name that `BUNDLE_ID_SUFFIX` and just change the name for each build configurations accordingly then on `info.plist`, change the `Bundle identifier` to `$(PRODUCT_BUNDLE_IDENTIFIER).$(BUNDLE_ID_SUFFIX)`
+
+<img src="https://github.com/aprilmintacpineda/react-native-multiple-build-environments-example/blob/master/resources/images/different%20variables%20per%20schema.png">
 
 ### Running the App
 
