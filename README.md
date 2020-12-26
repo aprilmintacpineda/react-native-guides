@@ -150,17 +150,17 @@ Now copy the `info.plist` twice and then rename one copy to `info_local.plist` a
 
 <img src="https://github.com/aprilmintacpineda/react-native-multiple-build-environments-example/blob/master/resources/images/add%20info%20plist%202.png">
 
-Since you'll be using the `info.plist` for production builds, you can remove the `App Transport Security Settings` entry on it.
-
-<img src="https://github.com/aprilmintacpineda/react-native-multiple-build-environments-example/blob/master/resources/images/add%20info%20plist%204.png">
-
-Then add the newly created `info_local.plist` and `info_staging.plist` to the project.
-
 ###### Note: the add file dialog might be too small, you can expand it to view more.
 
 By the end, you should have the following:
 
 <img src="https://github.com/aprilmintacpineda/react-native-multiple-build-environments-example/blob/master/resources/images/add%20info%20plist%203.png">
+
+Then add the newly created `info_local.plist` and `info_staging.plist` to the project.
+
+Since you'll be using the `info.plist` for production builds, you can remove the `App Transport Security Settings` entry on it.
+
+<img src="https://github.com/aprilmintacpineda/react-native-multiple-build-environments-example/blob/master/resources/images/add%20info%20plist%204.png">
 
 ### To use different bundle id, product name, and info plist for each environment
 
