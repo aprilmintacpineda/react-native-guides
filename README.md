@@ -97,11 +97,17 @@ target 'multi_build' do
 ```
 
 1.1. On the left sidebar, click on the `multi_build` xcode project.
+
 1.2. Then on the second left sidebar, under `PROJECT`, click on the `multi_build` project.
+
 1.3. Click on `Info` tab.
+
 1.4. Under `Configuration`, you'll see that there should be `Debug` and `Release` there initially, there's also a `+` button just below that, click on that `+` button.
+
 1.5. Click on `Duplicate "Debug" Configuration`; name the configuration as `LocalDebug`.
+
 1.6. Click on that `+` button again.
+
 1.5. Click on `Duplicate "Release" Configuration`; name the configuration as `LocalRelease`.
 
 Do the same thing for `Staging`
@@ -175,8 +181,11 @@ On the `targets`, select the `multi_build` and go to `build settings` and click 
 ## 5. Running the App
 
 5.1. Run `cd ios && pod install && cd ..`
+
 5.2. Choose schema, choose "Local" for example.
+
 5.3. Choose a simulator you want to use.
+
 5.4. Then click on the "Play" button.
 
 <img src="https://github.com/aprilmintacpineda/react-native-multiple-build-environments-example/blob/master/resources/images/run%20app.png">
