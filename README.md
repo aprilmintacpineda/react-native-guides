@@ -158,7 +158,7 @@ On `info.plist` change the `Bundle display name` to `$(PRODUCT_NAME)`
 
 <img src="https://github.com/aprilmintacpineda/react-native-multiple-build-environments-example/blob/master/resources/images/add%20info%20plist%202.png">
 
-###### Note: the add file dialog might be too small, you can expand it to view more.
+**Note: the add file dialog might be too small, you can expand it to view more.**
 
 By the end, you should have the following:
 
@@ -172,21 +172,21 @@ By the end, you should have the following:
 
 <img src="https://github.com/aprilmintacpineda/react-native-multiple-build-environments-example/blob/master/resources/images/copy%20bundle%20resources.png">
 
-### 4. To use different bundle id, product name, and info plist for each environment
+### 3.3 To use different bundle id, product name, and info plist for each environment
 
 On the `targets`, select the `multi_build` and go to `build settings` and click on the plus button and click on `Add User-Defined Setting` and name that `BUNDLE_ID_SUFFIX` and just change the name for each build configurations accordingly then on `info.plist`, change the `Bundle identifier` to `$(PRODUCT_BUNDLE_IDENTIFIER).$(BUNDLE_ID_SUFFIX)`
 
 <img src="https://github.com/aprilmintacpineda/react-native-multiple-build-environments-example/blob/master/resources/images/different%20variables%20per%20schema.png">
 
-## 5. Running the App
+## 4. Running the App
 
-5.1. Run `cd ios && pod install && cd ..`
+4.1. Run `cd ios && pod install && cd ..`
 
-5.2. Choose schema, choose "Local" for example.
+4.2. Choose schema, choose "Local" for example.
 
-5.3. Choose a simulator you want to use.
+4.3. Choose a simulator you want to use.
 
-5.4. Then click on the "Play" button.
+4.4. Then click on the "Play" button.
 
 <img src="https://github.com/aprilmintacpineda/react-native-multiple-build-environments-example/blob/master/resources/images/run%20app.png">
 
