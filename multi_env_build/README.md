@@ -84,11 +84,11 @@ In your `ios/Podfile`, add the following code:
 # ...
 platform :ios, '12.0'
 
-+ project 'multi_build',
-+        'LocalDebug' => :debug,
-+        'LocalRelease' => :release,
-+        'StagingDebug' => :debug,
-+        'StagingRelease' => :release
++project 'multi_build',
++       'LocalDebug' => :debug,
++       'LocalRelease' => :release,
++       'StagingDebug' => :debug,
++       'StagingRelease' => :release
 
 target 'multi_build' do
 # ...

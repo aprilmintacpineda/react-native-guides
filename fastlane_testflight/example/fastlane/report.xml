@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="fastlane.lanes">
+    
+    
+    
+      
+      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.00045">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="1: setup_ci" time="0.00038">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="2: app_store_connect_api_key" time="0.000942">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="3: match" time="8.266366">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="4: get_info_plist_value" time="0.00292">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="5: get_info_plist_value" time="0.00268">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="6: build_app" time="510.833071">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="7: upload_to_testflight" time="847.598099">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="8: clean_build_artifacts" time="0.019889">
+        
+      </testcase>
+    
+  </testsuite>
+</testsuites>

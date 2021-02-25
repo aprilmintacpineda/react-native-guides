@@ -1,0 +1,61 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+######## IOS CONFIGURATIONS
+# If you want to make the build automatically available to external groups,
+# add the name of the group to the array below, after "App Store Connect Users"
+groups = ["App Store Connect Users"]
+workspace = "ios/fastlane_deployment.xcworkspace"
+
+configuration = 'release' # configuration to build, if you build for multiple envs
+scheme = "fastlane_deployment" # scheme to build, if you build for multiple schema
+
+key_id = ENV["APPSTORE_KEY_ID"] # The key id of the p8 file
+issuer_id = ENV["APPSTORE_ISSUER_ID"] # issuer id on appstore connect
+key_filepath = "FastlaneDeploymentCI.p8" # The path to p8 file generated on appstore connect
+######## END IOS CONFIGURATIONS
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Push a new build to TestFlight"
+
+  lane :release do
+    setup_ci
+
+    api_key = app_store_connect_api_key(
+      key_id: key_id,
+      issuer_id: issuer_id,
+      key_filepath: key_filepath,
+      in_house: true
+    )
+
+    match(api_key: api_key)
+
+    build_app(
+      workspace: workspace,
+      scheme: scheme,
+      clean: true,
+      configuration: configuration
+    )
+
+    upload_to_testflight(
+      api_key: api_key,
+      groups: groups
+    )
+
+    clean_build_artifacts
+  end
+end

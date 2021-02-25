@@ -2,5 +2,6 @@
 
 ## Table Of Contents
 
+- [Setup App Icons](./setup_appicon)
 - [Building and deploying for multiple environments](./multi_env_build)
-- [Using fastlane and github actions to automatically sign, build, and deploy to TestFlight](./fastlane_ios_automation)
+- [Using fastlane to automated deployments to TestFlight and PlayStore and integrating it with github actions](./fastlane_testflight)
