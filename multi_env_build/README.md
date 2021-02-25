@@ -1,10 +1,10 @@
-# Building for multiple environments with React-Native
+# Building and deploying for multiple environments
 
 Problem build an app that runs on multiple environment (local, staging, production, etc.) and install all of them on the same device.
 
-<img src="./resources/images/Android.png">
+<img src="./images/Android.png">
 
-<img src="./resources/images/ios.png">
+<img src="./images/ios.png">
 
 # Initialize react-native
 
@@ -114,27 +114,27 @@ Do the same thing for `Staging`
 
 **NOTE:** For production, you don't have to since it will use the `Debug` and `Release` by default.
 
-<img src="./resources/images/add%20new%20configuration.png">
+<img src="./images/add%20new%20configuration.png">
 
 ## 2. Adding schema for each environment
 
 2.1. On the topbar, click where it says `multi_build >`; Then click on `Edit Schema`
 
-<img src="./resources/images/Add%20schema%201.png">
+<img src="./images/Add%20schema%201.png">
 
-<img src="./resources/images/add%20schema%202.png">
+<img src="./images/add%20schema%202.png">
 
 2.2. A dialog will appear, just click on `Duplicate Schema`; Then name that "Local"
 
-<img src="./resources/images/add%20schema%203.png">
+<img src="./images/add%20schema%203.png">
 
-<img src="./resources/images/add%20schema%204.png">
+<img src="./images/add%20schema%204.png">
 
 2.3. Where it says "Debug", change it to "LocalDebug"; Wher it says "Release", change it to "LocalRelease"; Do this for all the panels on the left sidebar, to start with, press on `Run` and change the "Build Configuration".
 
-<img src="./resources/images/add%20schema%205.png">
+<img src="./images/add%20schema%205.png">
 
-<img src="./resources/images/add%20schema%206.png">
+<img src="./images/add%20schema%206.png">
 
 Do this same process for the `Staging` environment.
 
@@ -146,7 +146,7 @@ Having different names and bundle id for each environment will allow us to insta
 
 On `info.plist` change the `Bundle display name` to `$(PRODUCT_NAME)`
 
-<img src="./resources/images/display%20name.png">
+<img src="./images/display%20name.png">
 
 ### 3.2 To use different info plist for each environment (optional)
 
@@ -154,29 +154,29 @@ On `info.plist` change the `Bundle display name` to `$(PRODUCT_NAME)`
 
 3.2.2. Add the newly created `info_local.plist` and `info_staging.plist` to the project.
 
-<img src="./resources/images/add%20info%20plist%201.png">
+<img src="./images/add%20info%20plist%201.png">
 
-<img src="./resources/images/add%20info%20plist%202.png">
+<img src="./images/add%20info%20plist%202.png">
 
 **Note: the add file dialog might be too small, you can expand it to view more.**
 
 By the end, you should have the following:
 
-<img src="./resources/images/add%20info%20plist%203.png">
+<img src="./images/add%20info%20plist%203.png">
 
 3.2.3. Since you'll be using the `info.plist` for production builds, you can remove the `App Transport Security Settings` entry on it.
 
-<img src="./resources/images/add%20info%20plist%204.png">
+<img src="./images/add%20info%20plist%204.png">
 
 3.2.4. Remove the `info.plist` entries on the `Copy Bundle Resources`. You can select them all by clicking on them while holding down `cmd`.
 
-<img src="./resources/images/copy%20bundle%20resources.png">
+<img src="./images/copy%20bundle%20resources.png">
 
 ### 3.3 To use different bundle id, product name, and info plist for each environment
 
 On the `targets`, select the `multi_build` and go to `build settings` and click on the plus button and click on `Add User-Defined Setting` and name that `BUNDLE_ID_SUFFIX` and just change the name for each build configurations accordingly then on `info.plist`, change the `Bundle identifier` to `$(PRODUCT_BUNDLE_IDENTIFIER).$(BUNDLE_ID_SUFFIX)`
 
-<img src="./resources/images/different%20variables%20per%20schema.png">
+<img src="./images/different%20variables%20per%20schema.png">
 
 ## 4. Running the App
 
@@ -188,6 +188,6 @@ On the `targets`, select the `multi_build` and go to `build settings` and click 
 
 4.4. Then click on the "Play" button.
 
-<img src="./resources/images/run%20app.png">
+<img src="./images/run%20app.png">
 
 ###### That's it!
