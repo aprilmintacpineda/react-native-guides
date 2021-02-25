@@ -80,17 +80,15 @@ Using XCode, open `ios/multi_build.xcworkspace`.
 
 In your `ios/Podfile`, add the following code:
 
-```ruby
+```diff
 # ...
 platform :ios, '12.0'
 
-# start here <----
-project 'multi_build',
-        'LocalDebug' => :debug,
-        'LocalRelease' => :release,
-        'StagingDebug' => :debug,
-        'StagingRelease' => :release
-# end here
++ project 'multi_build',
++        'LocalDebug' => :debug,
++        'LocalRelease' => :release,
++        'StagingDebug' => :debug,
++        'StagingRelease' => :release
 
 target 'multi_build' do
 # ...
