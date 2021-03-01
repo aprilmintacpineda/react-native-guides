@@ -115,10 +115,10 @@ Example:
 
 ```diff
 +app_identifier([
-  "com.<yourcompany>.fastlanedeploymentsexample",
-  "com.<yourcompany>.fastlanedeploymentsexample.staging",
-  "com.<yourcompany>.fastlanedeploymentsexample.local"
-])
++ "com.<yourcompany>.fastlanedeploymentsexample",
++ "com.<yourcompany>.fastlanedeploymentsexample.staging",
++ "com.<yourcompany>.fastlanedeploymentsexample.local"
++])
 ```
 
 2. Update `fastlane/Appfile` to the following:
