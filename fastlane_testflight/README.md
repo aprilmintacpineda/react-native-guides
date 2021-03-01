@@ -113,7 +113,7 @@ If you do [multiple build for each environments](../multi_env_build/README.md), 
 
 Example:
 
-```
+```diff
 +app_identifier([
   "com.<yourcompany>.fastlanedeploymentsexample",
   "com.<yourcompany>.fastlanedeploymentsexample.staging",
