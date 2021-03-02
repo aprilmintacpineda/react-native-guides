@@ -230,7 +230,7 @@ end
 
 5. Create a secret called `APPSTORE_ISSUER_ID` and put your `issuer id` as the value.
 
-6. Create a secret called `APPSTORE_TEAM_ID` and put your `team_id` as the value. You can find your `team_id` by going to `https://developer.apple.com/account/#/membership/`, you'll see a field called `team id`. You can also find it in `fastlane/Appfile`.
+6. Create a secret called `APPSTORE_TEAM_ID` and put your `team_id` as the value. You can find your `team_id` by going to https://developer.apple.com/account/#/membership/, you'll see a field called `team id`. You can also find it in `fastlane/Appfile`.
 
 7. Create a secret called `ITUNES_TEAM_ID` and put your `itc_team_id` as the value. You can find your `itc_team_id` by going to https://appstoreconnect.apple.com/WebObjects/iTunesConnect.woa/ra/user/detail, it's called `contentProviderId`, just make sure to select the right team if you are a member of multiple teams. You can find it in `fastlane/Appfile`.
 
