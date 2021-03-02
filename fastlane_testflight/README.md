@@ -230,13 +230,13 @@ end
 
 5. Create a secret called `APPSTORE_ISSUER_ID` and put your `issuer id` as the value.
 
-6. Create a secret called `APPSTORE_TEAM_ID` and put your `team_id` as the value, you can find it in `fastlane/Appfile`.
+6. Create a secret called `APPSTORE_TEAM_ID` and put your `team_id` as the value. You can find your `team_id` by going to `https://developer.apple.com/account/#/membership/`, you'll see a field called `team id`. You can also find it in `fastlane/Appfile`.
 
-7. Create a secret called `ITUNES_TEAM_ID` and put your `itc_team_id` as the value, you can find it in `fastlane/Appfile`.
+7. Create a secret called `ITUNES_TEAM_ID` and put your `itc_team_id` as the value. You can find your `itc_team_id` by going to https://appstoreconnect.apple.com/WebObjects/iTunesConnect.woa/ra/user/detail, it's called `contentProviderId`, just make sure to select the right team if you are a member of multiple teams. You can find it in `fastlane/Appfile`.
 
-8. Create secret called `APPLE_ID` and put your `apple_id` as the value, you can find it in `fastlane/Appfile`.
+8. Create secret called `APPLE_ID` and put your `apple_id` as the value. It must be the apple id you used to generate the p8 file.
 
-9. Create secret called `MATCH_REPO_SSH` and put your `git_url` as the value, you can find it in `fastlane/Matchfile`
+9. Create secret called `MATCH_REPO_SSH` and put your `git_url` as the value. It must be the ssh url to your match repo.
 
 ## Update Fastfile
 
