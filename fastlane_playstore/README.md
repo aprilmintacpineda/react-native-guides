@@ -111,7 +111,7 @@ vendor/
 
    8.1. **Package Name (com.krausefx.app):** -- provide your `applicationId`
 
-   8.2. **Path to the json secret file:** -- enter `google-secret-key.json`
+   8.2. **Path to the json secret file:** -- enter `google-service-account-key.json`
 
    8.3. ** Download existing metadata and setup metadata management? (y/n)** -- select `n`
 
@@ -119,9 +119,9 @@ vendor/
 
 ## Verify connection to Google Play Console
 
-1. Copy the google secret key that you generated and downloaded on the root directory of the project and name it `google-secret-key.json`. **Make sure to add it to your `.gitignore`.**
+1. Copy the google secret key that you generated and downloaded on the root directory of the project and name it `google-service-account-key.json`. **Make sure to add it to your `.gitignore`.**
 
-2. Run `bundle exec fastlane run validate_play_store_json_key json_key:google-secret-key.json`
+2. Run `bundle exec fastlane run validate_play_store_json_key json_key:google-service-account-key.json`
 
 ## Deploying to PlayStore Internal Track with Fastlane
 
@@ -172,7 +172,7 @@ Notice that in the above script, `release_status` is set to `draft`, this is bec
 2. In `Appfile`
 
 ```diff
-json_key_file("google-secret-key.json") # Path to the json secret file - Follow https://docs.fastlane.tools/actions/supply/#setup to get one
+json_key_file("google-service-account-key.json") # Path to the json secret file - Follow https://docs.fastlane.tools/actions/supply/#setup to get one
 -package_name(<your application id>) # e.g. com.krausefx.app
 ```
 
@@ -196,7 +196,7 @@ This will produce `my-upload-key.keystore.asc` which contains a string that we c
 
 2. Create a secret called `ANDROID_SIGNING_KEY_PASSPHRASE` and put the passphrase you used in `gpg`.
 
-3. Create a secret called `ANDROID_GOOGLE_KEYS` and copy-paste the contents of `google-secret-key.json`.
+3. Create a secret called `GOOGLE_SERVICE_ACCOUNT_KEY` and copy-paste the contents of `google-service-account-key.json`.
 
 ## Github Actions Workflow
 
@@ -243,7 +243,7 @@ jobs:
       - name: Setup dependencies
         run: |
           yarn
-          echo '${{ secrets.ANDROID_GOOGLE_KEYS }}' > android/google-secret-key.json
+          echo '${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}' > android/google-service-account-key.json
           echo "${{ secrets.ANDROID_SIGNING_KEY }}" > my-upload-key.keystore.asc
           gpg -d --passphrase "${{ secrets.ANDROID_SIGNING_KEY_PASSPHRASE }}" --batch my-upload-key.keystore.asc > android/app/my-upload-key.keystore
 
