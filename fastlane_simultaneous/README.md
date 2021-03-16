@@ -26,6 +26,18 @@ The only thing you need to do to simultaneously deploy to TestFlight and PlaySto
 |- Gemfile.lock
 ```
 
+# Gitignore entries
+
+```gitignore
+# fastlane
+*/fastlane/report.xml
+*/fastlane/Preview.html
+*/fastlane/screenshots
+vendor/
+FastlaneDeploymentCI.p8
+google-secret-key.json
+```
+
 # Ruby
 
 ## Gemfile
