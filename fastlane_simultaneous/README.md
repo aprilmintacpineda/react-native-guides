@@ -180,7 +180,7 @@ jobs:
 
 # iOS Fastlane files
 
-## ios/Appfile
+## ios/fastlane/Appfile
 
 ```ruby
 apple_id(ENV["APPLE_ID"]) # Your Apple email address
@@ -189,7 +189,7 @@ itc_team_id(ENV["ITUNES_TEAM_ID"]) # App Store Connect Team ID
 team_id(ENV["APPSTORE_TEAM_ID"]) # Developer Portal Team ID
 ```
 
-## ios/Matchfile
+## ios/fastlane/Matchfile
 
 ```ruby
 git_url(ENV["MATCH_REPO_SSH"])
@@ -202,7 +202,7 @@ app_identifier(["com.aprmp.fastlanedeploymentsexample"])
 username(ENV["APPLE_ID"]) # Your Apple Developer Portal username
 ```
 
-## ios/Fastfile
+## ios/fastlane/Fastfile
 
 ```ruby
 # This file contains the fastlane.tools configuration
@@ -270,13 +270,13 @@ end
 
 # Android Fastlane files
 
-## android/Appfile
+## android/fastlane/Appfile
 
 ```ruby
 json_key_file("google-secret-key.json") # Path to the json secret file - Follow https://docs.fastlane.tools/actions/supply/#setup to get one
 ```
 
-## android/Fastfile
+## android/fastlane/Fastfile
 
 ```ruby
 # This file contains the fastlane.tools configuration
