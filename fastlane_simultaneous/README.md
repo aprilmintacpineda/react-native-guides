@@ -45,7 +45,7 @@ BUNDLE_SET: "path ./vendor/bundle"
 
 # Github workflows
 
-## android-deployment.yaml
+## .github/workflows/android-deployment.yaml
 
 ```yaml
 name: android-deployment
@@ -98,7 +98,7 @@ jobs:
           bundle exec fastlane android internal
 ```
 
-## ios-deployment.yaml
+## .github/workflows/ios-deployment.yaml
 
 ```yaml
 name: ios-deployment
@@ -180,7 +180,7 @@ jobs:
 
 # iOS Fastlane files
 
-## Appfile
+## ios/Appfile
 
 ```ruby
 apple_id(ENV["APPLE_ID"]) # Your Apple email address
@@ -189,7 +189,7 @@ itc_team_id(ENV["ITUNES_TEAM_ID"]) # App Store Connect Team ID
 team_id(ENV["APPSTORE_TEAM_ID"]) # Developer Portal Team ID
 ```
 
-## Matchfile
+## ios/Matchfile
 
 ```ruby
 git_url(ENV["MATCH_REPO_SSH"])
@@ -202,7 +202,7 @@ app_identifier(["com.aprmp.fastlanedeploymentsexample"])
 username(ENV["APPLE_ID"]) # Your Apple Developer Portal username
 ```
 
-## Fastfile
+## ios/Fastfile
 
 ```ruby
 # This file contains the fastlane.tools configuration
@@ -270,13 +270,13 @@ end
 
 # Android Fastlane files
 
-## Appfile
+## android/Appfile
 
 ```ruby
 json_key_file("google-secret-key.json") # Path to the json secret file - Follow https://docs.fastlane.tools/actions/supply/#setup to get one
 ```
 
-## Fastfile
+## android/Fastfile
 
 ```ruby
 # This file contains the fastlane.tools configuration
