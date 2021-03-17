@@ -375,7 +375,7 @@ jobs:
           yarn
           cd ios
           pod install
-          echo "${{ secrets.P8_AUTH_KEY }}" > FastlaneDeploymentCI.p8
+          echo "${{ secrets.P8_AUTH_KEY }}" > ios/FastlaneDeploymentCI.p8
 
       - name: Build and deploy
         run: |
