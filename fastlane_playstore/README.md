@@ -125,7 +125,7 @@ vendor/
 
 ## Deploying to PlayStore Internal Track with Fastlane
 
-1. First, you need to create a release in `Internal Testing` and manually upload your first build before you can automatically upload builds using fastlane. You will need to follow `https://reactnative.dev/docs/signed-apk-android` to generate a key that you will use to sign your builds.
+1. First, you need to create a release in `Internal Testing` and manually upload your first build before you can automatically upload builds using fastlane. You will need to follow https://reactnative.dev/docs/signed-apk-android to generate a key that you will use to sign your builds.
 
 1. On your `Appfile`, change the following:
 
