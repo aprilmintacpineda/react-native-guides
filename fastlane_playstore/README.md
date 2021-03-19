@@ -144,7 +144,7 @@ platform :android do
 + lane :internal do
 -   gradle(task: "clean assembleRelease")
 +   gradle(
-+     task: "clean bundleRelease"
++     task: "clean bundleRelease",
 +     gradle_path: "./gradlew"
 +   )
 -   crashlytics
@@ -160,7 +160,7 @@ platform :android do
   lane :production do
 -   gradle(task: "clean assembleRelease")
 +   gradle(
-+     task: "clean bundleRelease"
++     task: "clean bundleRelease",
 +     gradle_path: "./gradlew"
 +   )
 -   upload_to_play_store
