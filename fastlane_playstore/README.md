@@ -143,7 +143,10 @@ platform :android do
 - lane :beta do
 + lane :internal do
 -   gradle(task: "clean assembleRelease")
-+   gradle(task: "clean bundleRelease")
++   gradle(
++     task: "clean bundleRelease"
++     gradle_path: "./gradlew"
++   )
 -   crashlytics
 +   upload_to_play_store(
 +     track: "internal",
@@ -156,7 +159,10 @@ platform :android do
 + desc "Build and deploy to production"
   lane :production do
 -   gradle(task: "clean assembleRelease")
-+   gradle(task: "clean bundleRelease")
++   gradle(
++     task: "clean bundleRelease"
++     gradle_path: "./gradlew"
++   )
 -   upload_to_play_store
 +   upload_to_play_store(
 +     aab: "app/build/outputs/bundle/release/app-release.aab"
