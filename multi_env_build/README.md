@@ -51,7 +51,7 @@ Do the same thing for `staging` environment.
 
 ## 3. Running the app
 
-To run the app, you need to do `npm run android -- --variant=$(flavor)$(buildType)` where the `$(flavor)` is one of the environments we defined on `productFlavors`, in this example, we have the following variants:
+To run the app, you need to do `react-native run-android --variant=$(flavor)$(buildType) --appIdSuffix=$(applicationIdSuffix)` where the `$(flavor)` is one of the environments we defined on `productFlavors` and `${buildType}` is either `Debug` or `Release`, in this example, we have the following variants:
 
 - `localDebug`
 - `localRelease`
@@ -60,11 +60,9 @@ To run the app, you need to do `npm run android -- --variant=$(flavor)$(buildTyp
 - `productionDebug`
 - `productionRelease`
 
-When developing locally, we'll need to run `npm run android -- --variant=localDebug`
+and `$(applicationIdSuffix)` is the `applicationIdSuffix` defined in the `$(flavor)`.
 
-### Known issues
-
-- [Error: Activity class {com.myapp/com.myapp.MainActivity} does not exist.](https://github.com/facebook/react-native/issues/30092)
+When developing locally, we'll need to run `react-native run-android --variant=localDebug --appIdSuffix=local`
 
 ## 4. Building AAB
 
