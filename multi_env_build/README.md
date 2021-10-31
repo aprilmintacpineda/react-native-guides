@@ -62,7 +62,7 @@ To run the app, you need to do `react-native run-android --variant=$(flavor)$(bu
 
 and `$(applicationIdSuffix)` is the `applicationIdSuffix` defined in the `$(flavor)`.
 
-When developing locally, we'll need to run `react-native run-android --variant=localDebug --appIdSuffix=.local`
+When developing locally, we'll need to run `react-native run-android --variant=localDebug --appIdSuffix=local`
 
 ## 4. Building AAB
 
