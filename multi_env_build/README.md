@@ -92,6 +92,22 @@ target 'multi_build' do
 # ...
 ```
 
+Then to make flipper work on other builds as well:
+
+```diff
+# Enables Flipper.
+#
+# Note that if you have use_frameworks! enabled, Flipper will not work and
+# you should disable the next line.
+- use_flipper!()
++ use_flipper!(configurations: [
++  'LocalDebug',
++  'LocalRelease',
++  'StagingDebug',
++  'StagingRelease'
++])
+```
+
 1.1. On the left sidebar, click on the `multi_build` xcode project.
 
 1.2. Then on the second left sidebar, under `PROJECT`, click on the `multi_build` project.
