@@ -46,6 +46,8 @@ On the `Grant this service account access to project`, make sure to select `Serv
 
 <img src="./images/gcp%20create%20credentials%205.png">
 
+Side note: You might also want to add `Firebase App Distribution Admin` if you are looking to also deploy your app to Firebase App Distribution, this will allow you to use the same service account to deploy to both TestFlight and Firebase App Distribution.
+
 ### Generate key
 
 1. Click on the service account you just created, and follow the images below.
