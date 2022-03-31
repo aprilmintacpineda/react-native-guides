@@ -48,6 +48,14 @@ On the `Grant this service account access to project`, make sure to select `Serv
 
 Side note: You might also want to add `Firebase App Distribution Admin` if you are looking to also deploy your app to Firebase App Distribution, this will allow you to use the same service account to deploy to both TestFlight and Firebase App Distribution.
 
+Though you can edit this later by following the steps below (just make sure to select the right project)
+
+![1](https://user-images.githubusercontent.com/21032419/161023876-aba5b5de-f0bf-4278-9776-e9ac50486fd7.png)
+
+![2](https://user-images.githubusercontent.com/21032419/161023986-8f81da84-cd7f-4ab0-82bf-b925fbfecc30.png)
+
+![3](https://user-images.githubusercontent.com/21032419/161024007-e80a8df5-b1e9-4e25-a00f-c426adfe4acc.png)
+
 ### Generate key
 
 1. Click on the service account you just created, and follow the images below.
