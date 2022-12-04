@@ -108,6 +108,8 @@ Then to make flipper work on other builds as well:
 +])
 ```
 
+If you are using 0.68 and up, refer to https://github.com/facebook/react-native/issues/34332
+
 1.1. On the left sidebar, click on the `multi_build` xcode project.
 
 1.2. Then on the second left sidebar, under `PROJECT`, click on the `multi_build` project.
