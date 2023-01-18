@@ -86,7 +86,23 @@ Once you have selected your app, click on apply, and you'll see the permissions,
 
 You can uncheck everything here.
 
-Then click on `Invite User` button when you're cone.
+Then click on `Invite User` button when you're done.
+
+# Configure release
+
+1. Open `android/app/build.gradle`
+2. In `signingConfigs`, make sure you have the following or the equivalent:
+
+```gradle
+release {
+    storeFile file(MYAPP_UPLOAD_STORE_FILE)
+    storePassword MYAPP_UPLOAD_STORE_PASSWORD
+    keyAlias MYAPP_UPLOAD_KEY_ALIAS
+    keyPassword MYAPP_UPLOAD_KEY_PASSWORD
+}
+```
+
+3. Then in `buildTypes.release`, make sure to replace `signingConfig signingConfigs.debug` with `signingConfig signingConfigs.release`
 
 # Using Fastlane
 
